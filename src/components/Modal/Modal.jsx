@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner';
 
 export class Modal extends Component {
   static propTypes = {
-    largeImage: PropTypes.object,
+    largeImage: PropTypes.string,
     onToggleModal: PropTypes.func,
     onCloseModal: PropTypes.func,
   };
@@ -33,7 +33,7 @@ export class Modal extends Component {
           width={150}
         />
         <div className="Modal">
-          <img src={largeImage.largeImageURL} alt={largeImage.tags} />
+          <img src={largeImage} alt="" />
         </div>
       </div>
     );

@@ -4,10 +4,10 @@ import ImageGalleryItem from '../ImageGalleryItem';
 export function ImageGallery({ images, onOpenModal }) {
   return (
     <ul className="ImageGallery">
-      {images.map(({ id, webformatURL, tags }) => (
+      {images.map(({ id, largeImageURL, webformatURL, tags }) => (
         <ImageGalleryItem
           key={id}
-          id={id}
+          largeImageURL={largeImageURL}
           webformatURL={webformatURL}
           onOpenModal={onOpenModal}
           tags={tags}

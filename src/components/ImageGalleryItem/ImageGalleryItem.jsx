@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types';
 
-export function ImageGalleryItem({ webformatURL, onOpenModal, id, tags }) {
+export function ImageGalleryItem({
+  webformatURL,
+  onOpenModal,
+  largeImageURL,
+  tags,
+}) {
   return (
     <>
-      <li className="ImageGalleryItem" onClick={() => onOpenModal(id)}>
+      <li
+        className="ImageGalleryItem"
+        onClick={() => onOpenModal(largeImageURL)}
+      >
         <img src={webformatURL} alt={tags} className="ImageGalleryItem-image" />
       </li>
     </>

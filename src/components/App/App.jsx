@@ -11,7 +11,7 @@ class App extends Component {
     querySearch: '',
     page: 1,
     modalIsOpen: false,
-    largeImage: {},
+    largeImage: '',
     loading: false,
   };
 
@@ -35,11 +35,9 @@ class App extends Component {
     this.setState({ querySearch: queryInput });
   };
 
-  handleOpenModal = id => {
-    const image = this.state.images.find(el => el.id === id);
-
+  handleOpenModal = largeImageURL => {
     this.handleToggleModal();
-    this.setState({ largeImage: image });
+    this.setState({ largeImage: largeImageURL });
   };
 
   handleToggleModal = () => {
@@ -84,10 +82,7 @@ class App extends Component {
 
         {images.length > 0 && (
           <>
-            <ImageGallery
-              images={images}
-              onOpenModal={this.handleOpenModal}
-            ></ImageGallery>
+            <ImageGallery images={images} onOpenModal={this.handleOpenModal} />
 
             <Button loading={loading} onLoadMore={this.handleLoadMore} />
           </>
