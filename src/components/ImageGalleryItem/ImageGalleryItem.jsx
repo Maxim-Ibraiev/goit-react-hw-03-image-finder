@@ -10,7 +10,7 @@ export function ImageGalleryItem({
     <>
       <li
         className="ImageGalleryItem"
-        onClick={() => onOpenModal(largeImageURL)}
+        onClick={() => onOpenModal({ largeImageURL, tags })}
       >
         <img src={webformatURL} alt={tags} className="ImageGalleryItem-image" />
       </li>

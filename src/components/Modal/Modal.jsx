@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner';
 
 export class Modal extends Component {
   static propTypes = {
-    largeImage: PropTypes.string,
+    largeImage: PropTypes.object,
     onToggleModal: PropTypes.func,
     onCloseModal: PropTypes.func,
   };
@@ -22,7 +22,11 @@ export class Modal extends Component {
   };
 
   render() {
-    const { largeImage, onToggleModal } = this.props;
+    const {
+      largeImage: { largeImageURL, tags },
+      onToggleModal,
+    } = this.props;
+
     return (
       <div className="Overlay" onClick={onToggleModal}>
         <Loader
@@ -33,7 +37,7 @@ export class Modal extends Component {
           width={150}
         />
         <div className="Modal">
-          <img src={largeImage} alt="" />
+          <img src={largeImageURL} alt={tags} />
         </div>
       </div>
     );

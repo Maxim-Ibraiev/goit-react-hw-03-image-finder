@@ -11,7 +11,7 @@ class App extends Component {
     querySearch: '',
     page: 1,
     modalIsOpen: false,
-    largeImage: '',
+    largeImage: {},
     loading: false,
   };
 
@@ -35,9 +35,9 @@ class App extends Component {
     this.setState({ querySearch: queryInput });
   };
 
-  handleOpenModal = largeImageURL => {
+  handleOpenModal = ({ largeImageURL, tags }) => {
     this.handleToggleModal();
-    this.setState({ largeImage: largeImageURL });
+    this.setState({ largeImage: { largeImageURL, tags } });
   };
 
   handleToggleModal = () => {
@@ -92,7 +92,6 @@ class App extends Component {
           <Modal
             largeImage={largeImage}
             onToggleModal={this.handleToggleModal}
-            onCloseModal={this.handleCloseModal}
           />
         )}
       </div>
